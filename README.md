@@ -373,6 +373,7 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
+<img width="751" height="236" alt="Screenshot from 2025-08-24 21-21-09" src="https://github.com/user-attachments/assets/c03fdbec-901d-4f36-8ef6-1f2f33467a03" />
 
 
 
@@ -380,6 +381,7 @@ uniq file22
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
+<img width="1114" height="344" alt="Screenshot from 2025-08-24 21-21-52" src="https://github.com/user-attachments/assets/721bd9cd-80a0-42c5-b7ac-8bd093659629" />
 
 cat < urllist.txt
 ```
@@ -396,17 +398,20 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
+<img width="961" height="163" alt="Screenshot from 2025-08-24 21-24-42" src="https://github.com/user-attachments/assets/9240b599-1313-48f5-b21e-0bc9a2412e6d" />
 
 
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
+<img width="1146" height="180" alt="Screenshot from 2025-08-24 21-25-09" src="https://github.com/user-attachments/assets/7070856b-140c-4cfb-af15-e1b2bd561e85" />
 
 
 
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
+<img width="1156" height="342" alt="Screenshot from 2025-08-24 21-25-39" src="https://github.com/user-attachments/assets/a1c5bb50-e5d1-4b73-94bd-a5de448c1b4b" />
 
 
 mkdir backupdir
@@ -417,15 +422,18 @@ cd backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
+<img width="1156" height="342" alt="Screenshot from 2025-08-24 21-27-22" src="https://github.com/user-attachments/assets/f2a5a4f4-696f-41ec-aa5e-378512f8ad1b" />
 
 
 tar -xvf backup.tar
 ## OUTPUT
+<img width="1156" height="342" alt="Screenshot from 2025-08-24 21-27-46" src="https://github.com/user-attachments/assets/e05304d9-ea15-4948-8786-67be10bf31b4" />
 
 gzip backup.tar
 
 ls .gz
 ## OUTPUT
+<img width="1146" height="88" alt="Screenshot from 2025-08-24 21-28-28" src="https://github.com/user-attachments/assets/116c2844-dc79-4c25-8619-b27419c41d66" />
  
 gunzip backup.tar.gz
 ## OUTPUT
