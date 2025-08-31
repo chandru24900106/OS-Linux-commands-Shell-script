@@ -1,3 +1,6 @@
+## NAME : CHANDRU V
+## REG NO : 212224230043
+## EX : 1
 # OS-Linux-commands-Shell-scripting
 Operating systems Lab exercise
 # Linux commands-Shell scripting
@@ -447,6 +450,23 @@ echo $?
 
 # mis-using string comparisons
 
+cat > strcomp.sh 
+```bash
+\#!/bin/bash
+val1=baseball
+val2=hockey
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+^d
+```
+## OUTPUT
+<img width="565" height="373" alt="image" src="https://github.com/user-attachments/assets/773ecf46-aaec-4df2-936d-55bff185b132" />
+
+
 cat < strcomp.sh 
 ```bash
 \#!/bin/bash
@@ -458,33 +478,14 @@ echo "$val1 is greater than $val2"
 else
 echo "$val1 is less than $val2"
 fi
-^d
 ```
 
-cat strcomp.sh 
-```bash
-\#!/bin/bash
-val1=baseball
-val2=hockey
-if [ $val1 \> $val2 ]
-then
-echo "$val1 is greater than $val2"
-else
-echo "$val1 is less than $val2"
-fi
-```
-##OUTPUT
-
-
-
-chmod 755 strcomp.sh
- 
-./strcomp.sh 
 ## OUTPUT
+<img width="607" height="417" alt="image" src="https://github.com/user-attachments/assets/83872dd5-61f5-4d83-ba83-5db5ab0c7b29" />
 
 
 # check file ownership
-cat < psswdperm.sh 
+cat > psswdperm.sh 
 ```bash
 \#!/bin/bash
 if [ -O /etc/passwd ]
@@ -495,8 +496,10 @@ echo “Sorry, you are not the owner of the /etc/passwd file”
 fi
 ^d
 ```
+## OUTPUT
+<img width="927" height="312" alt="image" src="https://github.com/user-attachments/assets/1165cf60-6c77-40cb-9683-00b5f02d9308" />
 
-cat psswdperm.sh 
+cat < psswdperm.sh 
 ```bash
 /#!/bin/bash
 if [ -O /etc/passwd ]
@@ -506,150 +509,13 @@ else
 echo “Sorry, you are not the owner of the /etc/passwd file”
 fi
  ```
-./psswdperm.sh
+
 ## OUTPUT
+<img width="1000" height="317" alt="image" src="https://github.com/user-attachments/assets/8f79e328-3032-48d9-a74f-e378c85c1b14" />
 
-# check if with file location
-cat>ifnested.sh 
-```bash
-\#!/bin/bash
-if [ -e $HOME ]
-then
-echo “$HOME The object exists, is it a file?”
-if [ -f $HOME ]
-then
-echo “Yes,$HOME it is a file!”
-else
-echo “No,$HOME it is not a file!”
-if [ -f $HOME/.bash_history ]
-then
-echo “But $HOME/.bash_history is a file!”
-fi
-fi
-else
-echo “Sorry, the object does not exist”
-fi
-^d
-```
-cat ifnested.sh 
-```
-\#!/bin/bash
-if [ -e $HOME ]
-then
-echo “$HOME The object exists, is it a file?”
-if [ -f $HOME ]
-then
-echo “Yes,$HOME it is a file!”
-else
-echo “No,$HOME it is not a file!”
-if [ -f $HOME/.bash_history ]
-then
-echo “But $HOME/.bash_history is a file!”
-fi
-fi
-else
-echo “Sorry, the object does not exist”
-fi
-```
-
-./ifnested.sh 
-## OUTPUT
-
-
-
-# using numeric test comparisons
-cat > iftest.sh 
-```bash
-\#!/bin/bash
-val1=10
-val2=11
-if [ $val1 -gt 5 ]
-then
-echo “The test value $val1 is greater than 5”
-fi
-if [ $val1 -eq $val2 ]
-then
-echo “The values are equal”
-else
-echo “The values are different”
-fi
-^d
-```
-
-
-cat iftest.sh 
-```bash
-\#!/bin/bash
-val1=10
-val2=11
-if [ $val1 -gt 5 ]
-then
-echo “The test value $val1 is greater than 5”
-fi
-if [ $val1 -eq $val2 ]
-then
-echo “The values are equal”
-else
-echo “The values are different”
-fi
-```
-
-$ chmod 755 iftest.sh
- 
-$ ./iftest.sh 
-##OUTPUT
-
-# check if a file
-cat > ifnested.sh 
-```bash
-\#!/bin/bash
-if [ -e $HOME ]
-then
-echo “$HOME The object exists, is it a file?”
-if [ -f $HOME ]
-then
-echo “Yes,$HOME it is a file!”
-else
-echo “No,$HOME it is not a file!”
-if [ -f $HOME/.bash_history ]
-then
-echo “But $HOME/.bash_history is a file!”
-fi
-fi
-else
-echo “Sorry, the object does not exist”
-fi
-^d
-```
-
-cat ifnested.sh 
-```bash
-\#!/bin/bash
-if [ -e $HOME ]
-then
-echo “$HOME The object exists, is it a file?”
-if [ -f $HOME ]
-then
-echo “Yes,$HOME it is a file!”
-else
-echo “No,$HOME it is not a file!”
-if [ -f $HOME/.bash_history ]
-then
-echo “But $HOME/.bash_history is a file!”
-fi
-fi
-else
-echo “Sorry, the object does not exist”
-fi
-```
-
-$ chmod 755 ifnested.sh
- 
-$ ./ifnested.sh 
-##OUTPUT
 
 # looking for a possible value using elif
-cat elifcheck.sh 
+cat > elifcheck.sh 
 ```bash
 \#!/bin/bash
 if [ $USER = Ram ]
@@ -670,12 +536,9 @@ else
 echo "Sorry, you are not allowed here"
 fi
 ```
-
-$ chmod 755 elifcheck.sh
- 
-$ ./elifcheck.sh 
 ## OUTPUT
 
+<img width="882" height="710" alt="image" src="https://github.com/user-attachments/assets/8ddef803-85d7-4ab3-874a-51210bf2e496" />
 
 # testing compound comparisons
 cat> ifcompound.sh 
@@ -691,6 +554,7 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+<img width="752" height="326" alt="image" src="https://github.com/user-attachments/assets/5dd61fe7-32d4-4fef-91c0-dab9c59fcbca" />
 
 # using the case command
 cat >casecheck.sh 
@@ -707,10 +571,9 @@ echo "$USER, Do not forget to log off when you're done";;
 echo "Sorry, you are not allowed here";;
 esac
 ```
-$ chmod 755 casecheck.sh 
- 
-$ ./casecheck.sh 
- 
+## OUTPUT
+<img width="925" height="443" alt="image" src="https://github.com/user-attachments/assets/832f6e41-5835-4d29-9c6d-ff2c9082593d" />
+
 cat > whiletest
 ```bash
 #!/bin/bash
@@ -722,12 +585,10 @@ echo $var1
 var1=$[ $var1 - 1 ]
 done
 ```
-$ chmod 755 whiletest.sh
- 
-$ ./whiletest.sh
- 
- 
-cat untiltest.sh 
+## OUTPUT
+<img width="502" height="348" alt="image" src="https://github.com/user-attachments/assets/02d30cf6-6b71-47e4-ab2d-6a72e39ec012" />
+
+cat > untiltest.sh 
 ```bash
 \#using the until command
 var1=100
@@ -737,11 +598,12 @@ echo $var1
 var1=$[ $var1 - 25 ]
 done
 ``` 
-$ chmod 755 untiltest.sh
+## OUTPUT
+
+<img width="505" height="317" alt="image" src="https://github.com/user-attachments/assets/1a1df273-eb13-435e-a562-e33261911880" />
+
  
- 
- 
-cat forin1.sh 
+cat > forin1.sh 
 ```bash
 \#!/bin/bash
 \#basic for command
@@ -750,24 +612,12 @@ do
 echo The next state is $test
 done
  ```
+ ## OUTPUT
+<img width="1065" height="277" alt="image" src="https://github.com/user-attachments/assets/63c46f4e-c834-4995-901c-1bb2c86a9374" />
+
  
-$ chmod 755 forin1.sh
- 
- 
-cat forin2.sh 
-```bash
-\#!/bin/bash
-\# another example of how not to use the for command
-for test in I don't know if this'll work
-do
-echo “word:$test”
-done
- ```
- 
-$ chmod 755 forin2.sh
- 
-cat forin2.sh 
-```bash
+cat > forin2.sh 
+``` bash
 \#!/bin/bash
 \# another example of how not to use the for command
 for test in I don't know if this'll work
@@ -775,12 +625,12 @@ do
 echo “word:$test”
 done
 ```
-$ chmod 755 forin2.sh
- 
-$ ./forin2.sh 
- 
-cat forin3.sh 
-```bash
+## OUTPUT
+<img width="815" height="280" alt="image" src="https://github.com/user-attachments/assets/452969c3-5f9b-4422-b046-a28c82245a9a" />
+
+cat > forin3.sh 
+```
+bash
 \#!/bin/bash
 \# another example of how not to use the for command
 for test in I don\'t know if "this'll" work
@@ -788,10 +638,12 @@ do
 echo "word:$test"
 done
 ```
-$ ./forin3.sh 
- 
-cat forin1.sh 
-```bash
+## OUTPUT 
+<img width="862" height="355" alt="image" src="https://github.com/user-attachments/assets/cc49afa5-0946-4f56-90c3-1df638d6ca5d" />
+
+cat > forin1.sh 
+```
+bash
 #!/bin/bash
 # basic for command
 for test in Alabama Alaska Arizona Arkansas California Colorado
@@ -799,11 +651,12 @@ do
 echo The next state is $test
 done
 ```
-$ chmod 755 forin1.sh
-
 ## OUTPUT
-cat forinfile.sh 
-```bash
+<img width="997" height="318" alt="image" src="https://github.com/user-attachments/assets/73c7a80d-33a5-4044-a4fc-c604c64bd274" />
+
+cat > forinfile.sh 
+```
+`bash
 #!/bin/bash
 # reading values from a file
 file="cities"
@@ -812,47 +665,26 @@ do
 echo "Visit beautiful $file“
 done
 ```
-$ chmod 777 forinfile.sh
-$ cat cities
-Hyderabad
-Alampur
-Basara
-Warangal
-Adilabad
-Bhadrachalam
-Khammam
-
 ## OUTPUT
+<img width="588" height="343" alt="image" src="https://github.com/user-attachments/assets/4b2c8106-1627-4560-9977-f7b52c38ba26" />
 
 
-cat forctype.sh 
-```bash
+cat> forctype.sh 
+```
+bash
 #!/bin/bash
 # testing the C-style for loop
 for (( i=1; i <= 5; i++ ))
 do
 echo "The value of i is $i"
 done
-````
-$ chmod 755 forctype.sh
-$ ./forctype.sh 
-## OUTPUT
-
-cat forctype1.sh 
-```bash
-#!/bin/bash
-# multiple variables
-for (( a=1, b=5; a <= 5; a++, b-- ))
-do
-echo "$a - $b"
-done
 ```
-$ chmod 755 forctype.sh
-$ ./forctype1.sh 
 ## OUTPUT
+<img width="562" height="307" alt="image" src="https://github.com/user-attachments/assets/192428af-bda3-4eee-b1cb-545778a66958" />
 
-cat fornested1.sh 
-```bash
+cat > fornested1.sh 
+```
+bash
 #!/bin/bash
 # nesting for loops
 for (( a = 1; a <= 3; a++ ))
@@ -864,13 +696,11 @@ echo " Inside loop: $b"
 done
 done
 ```
-$ chmod 755 fornested1.sh
- 
-$ ./fornested1.sh 
  ## OUTPUT
+<img width="497" height="450" alt="image" src="https://github.com/user-attachments/assets/d6f59dfb-6999-438a-8910-b52712eb0ea1" />
 
  
-cat forbreak.sh 
+cat > forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -885,12 +715,9 @@ done
 echo "The for loop is completed“
 ```
 ## OUTPUT
+<img width="593" height="451" alt="image" src="https://github.com/user-attachments/assets/c8df5957-dff4-422c-b559-421060b81b21" />
 
-$ chmod 755 forbreak.sh
- 
-$ ./forbreak.sh 
- 
-cat forbreak.sh 
+cat< forbreak.sh 
 ```bash
 #!/bin/bash
 # breaking out of a for loop
@@ -905,13 +732,10 @@ done
 echo "The for loop is completed“
 ```
 
- 
-$ chmod 755 forcontinue.sh
- 
-$ ./forcontinue.sh 
 ## OUTPUT
- 
-cat exread.sh 
+<img width="610" height="467" alt="image" src="https://github.com/user-attachments/assets/1f3306c2-4414-4ddb-8b42-aacdb34faba7" />
+
+cat >exread.sh 
 ```bash
 #!/bin/bash
 # testing the read command
@@ -919,29 +743,28 @@ echo -n "Enter your name: "
 read name
 echo "Hello $name, welcome to my program. "
  ```
- 
-$ chmod 755 exread.sh 
- 
-$ ./exread.sh 
+
 ## OUTPUT
+<img width="807" height="263" alt="image" src="https://github.com/user-attachments/assets/eebe49bb-245c-4e96-a1f3-e8768c85bbff" />
 
 
- cat exread1.sh
+ cat< exread.sh
 ```bash
 #!/bin/bash
 # testing the read command
 read -p "Enter your name: " name
 echo "Hello $name, welcome to my program. “
 ``` 
-$ chmod 755 exread1.sh 
+ 
 
 ## OUTPUT
 
+<img width="720" height="252" alt="image" src="https://github.com/user-attachments/assets/4fc37725-7111-4bb0-9131-9f338beeae99" />
 
 
-$ ./exread1.sh 
+
  
-cat funcex.sh
+cat >funcex.sh
 ```bash
 #!/bin/bash
 # trying to access script parameters inside a function
@@ -957,13 +780,11 @@ echo "Usage: badtest1 a b"
 fi
 ```
 ## OUTPUT
- ./funcex.sh 
+
+<img width="847" height="482" alt="image" src="https://github.com/user-attachments/assets/3626df9e-94c7-4580-9341-84bba45026e0" />
 
  
- ./funcex.sh 1 2
-
- 
-cat argshift.sh
+cat> argshift.sh
 ```bash
 #!/bin/bash 
  while (( "$#" )); do 
@@ -971,12 +792,12 @@ cat argshift.sh
   shift 
 done
 ```
-$ chmod 777 argshift.sh
 
 ## OUTPUT
-$ ./argshift.sh 1 2 3
+<img width="502" height="252" alt="image" src="https://github.com/user-attachments/assets/55ca8438-6b7d-49f0-b2f2-73a020958a83" />
+
  
- cat argshift1.sh
+ cat < argshift1.sh
 ```bash
  #/bin/bash 
  # store arguments in a special array 
@@ -989,22 +810,9 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo ${args[${i}]} 
 done
 ```
-$ chmod 777 argshift.sh
 ## OUTPUT
-$ ./argshift.sh 1 2 3
- 
-cat argshift.sh
-```bash
-#!/bin/bash 
-set -x 
-while (( "$#" )); do 
-  echo $1 
-  shift 
-done
-set +x
-```
-## OUTPUT
- ./argshift.sh 1 2 3
+<img width="605" height="250" alt="image" src="https://github.com/user-attachments/assets/c02ce20f-861d-4bf7-995c-30d24cffacc0" />
+
  
  
 cat > nc.awk
@@ -1021,6 +829,11 @@ print "Number of Lines are",NR
 print "No of Words count:",wordcount
 }
  ```
+## OUTPUT
+<img width="737" height="543" alt="image" src="https://github.com/user-attachments/assets/85e77a61-1178-4706-bde0-06e5e819abab" />
+
+
+
 cat>data.dat
 ```bash
 bcdfghj
@@ -1034,9 +847,15 @@ obcdfghj
 bcdfghj
 ubcdfghj
 ```
-awk -f nc.awk data.dat
 ## OUTPUT 
- 
+<img width="597" height="490" alt="image" src="https://github.com/user-attachments/assets/77d8004a-d25c-423a-91ef-63cb772e4340" />
+
+
+awk -f nc.awk data.dat
+
+## OUTPUT 
+<img width="526" height="155" alt="image" src="https://github.com/user-attachments/assets/24cd4c9b-c754-4fab-ba77-e4504546fefd" />
+
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1063,6 +882,7 @@ else
 fi
 ```
 ## OUTPUT 
+<img width="698" height="833" alt="image" src="https://github.com/user-attachments/assets/0665105d-0182-4f02-b64d-b60068e49a07" />
 
 
 # RESULT:
